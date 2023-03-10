@@ -1,7 +1,7 @@
 import os
 import sys
 cur_path=os.path.abspath(os.path.dirname(__file__))
-sys.path.insert(0, cur_path+"/..")
+sys.path.insert(0, cur_path+"/../..")
 
 from src.TMotorCANControl.mit_can import *
 
