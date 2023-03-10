@@ -68,6 +68,22 @@ Servo_Params = {
             'NUM_POLE_PAIRS': 21,
             'Use_derived_torque_constants': False, # true if you have a better model
         },
+        'AK80-64':{
+            'P_min' : -32000,#-3200 deg
+            'P_max' : 32000,#3200 deg
+            'V_min' : -32000,#-320000 rpm electrical speed
+            'V_max' : 32000,# 320000 rpm electrical speed
+            'Curr_min':-1500,#-60A is the acutal limit but set to -15A
+            'Curr_max':1500,#60A is the acutal limit but set to 15A
+            'T_min' : -48,#NM
+            'T_max' : 48,#NM
+            'Kt_TMotor' : 0.136, # from TMotor website (actually 1/Kvll)
+            'Current_Factor' : 0.59,
+            'Kt_actual': 0.115,
+            'GEAR_RATIO': 64.0, 
+            'NUM_POLE_PAIRS': 21,
+            'Use_derived_torque_constants': False, # true if you have a better model
+        },
         'CAN_PACKET_ID':{
 
             'CAN_PACKET_SET_DUTY':0, #Motor runs in duty cycle mode
@@ -572,13 +588,13 @@ class TMotorManager_servo_can():
     used in the context of a with as block, in order to safely enter/exit
     control of the motor.
     """
-    def __init__(self, motor_type='AK80-9', motor_ID=1, max_mosfett_temp = 50, CSV_file=None, log_vars = LOG_VARIABLES):
+    def __init__(self, motor_type='AK80-64', motor_ID=1, max_mosfett_temp = 50, CSV_file=None, log_vars = LOG_VARIABLES):
         """
         Sets up the motor manager. Note the device will not be powered on by this method! You must
         call __enter__, mostly commonly by using a with block, before attempting to control the motor.
 
         Args:
-            motor_type: The type of motor being controlled, ie AK80-9.
+            motor_type: The type of motor being controlled, ie AK80-64.
             motor_ID: The CAN ID of the motor.
             max_mosfett_temp: temperature of the mosfett above which to throw an error, in Celsius
             CSV_file: A CSV file to output log info to. If None, no log will be recorded.
