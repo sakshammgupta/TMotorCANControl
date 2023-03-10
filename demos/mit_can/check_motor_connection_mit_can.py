@@ -1,3 +1,4 @@
+import TMotorCANControl.mit_can 
 from TMotorCANControl.mit_can import TMotorManager_mit_can
 
 # CHANGE THESE TO MATCH YOUR DEVICE!
