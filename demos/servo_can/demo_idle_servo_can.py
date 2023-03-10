@@ -10,6 +10,7 @@ cur_path=os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, cur_path+"/../..")
 
 from TMotorCANControl.servo_can import *
+print("started")
 # from TMotorCANControl.servo_can import TMotorManager_servo_can
 import time
 
