@@ -1,6 +1,6 @@
 # TMotorCANControl
 A Python API for controlling the AK-series Tmotor Actuators from CubeMars over the CAN bus.
-The project is geared towards the control of the AK80-9 actuator using a raspberry pi CAN hat or serial bus, but
+The project is geared towards the control of the AK80-64 and AK80-9 actuator using a raspberry pi CAN hat or serial bus, but
 could eaisly be adapted for use with a different CAN/serial interface. The API files are in the src/TMotorCANControl
 folder in this repository. The main interface is in the file TMotorManager_mit_can.py for MIT mode, 
 TMotorManager_servo_can.py for Servo mode (over CAN), and TMotorManager_servo_serial for Servo mode (over serial). 
