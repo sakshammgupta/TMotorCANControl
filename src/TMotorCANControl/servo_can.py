@@ -426,6 +426,7 @@ class CAN_Manager_servo(object):
             duty: duty cycle (-1 to 1) to use
         """
         buffer=[]
+        send_index = 0
         self.buffer_append_int32(buffer, np.int32(duty * 100000.0))
         self.send_servo_message(controller_id|(Servo_Params['CAN_PACKET_ID']['CAN_PACKET_SET_DUTY'] << 8), buffer, send_index)
 
